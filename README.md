@@ -16,8 +16,7 @@ loads a dancing celery man.
 ```shell
   celeryman tayne
 ```
-
-generates Tayne doing a [hat wobble](http://www.youtube.com/watch?v=MHWBEK8w_YY).
+generates a dancing [Tayne](http://www.youtube.com/watch?v=MHWBEK8w_YY).
 
 Credits
 ------
