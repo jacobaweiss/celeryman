@@ -1,54 +1,21 @@
 #!/bin/sh
-#
-# CELERY MAN
-#======
-# 
-# CELERY MAN is a Bash script to run your dancers,
-# like Paul Rudd in this Tim & Eric clip: http://www.youtube.com/watch?v=MHWBEK8w_YY
-#
-# Recently, I learned about Bash scripting in Systems Programming, and wanted to do something fun.
-# I had seen Bahamas10's node-celery-man (https://github.com/bahamas10/node-celery-man)
-# and wanted to implement this using Bash. Thus, here is Celery Man.
-#
-#======
-#
-# Usage:
-#
-# celeryman
-# 
-#   loads dancing celery man
-#
-# celeryman tayne
-#
-#   loads tayne doing a hat wobble
-#======
-#
-# Credit:
-# 
-# The ascii files for the main celery man are 
-# from node-celery-man 
 
 if [ $1 = "tayne" ]; then
-    move=$1
-    imgs=23
+    dancer=$1
+    frames=23
     seconds=0.06
 else
-    move="celery"
-    imgs=45
+    dancer="celery"
+    frames=45
     seconds=0.03
 fi
-
-echo "4d3d3d3 engaged"
-
-clear
-sleep 0.3
 
 i=1
 while true; do
     if [ ${#i} -eq 2 ]; then
-        cat "$move/$i.txt"
+        cat "$dancer/$i.txt"
     else
-        cat "$move/0$i.txt"
+        cat "$dancer/0$i.txt"
     fi
 
     sleep $seconds
@@ -56,7 +23,7 @@ while true; do
 
     i=`expr $i + 1`
 
-    if [ $i -eq $imgs ]; then
+    if [ $i -eq $frames ]; then
         i=1
     fi
 done
